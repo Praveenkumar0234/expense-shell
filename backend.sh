@@ -1,6 +1,8 @@
 log_file="/tmp/expense.log"
 colour="\e[33m"
 
+MYSQL_SET_PASSWORD = $*
+
 echo -e "${colour} ******disable old version nodejs and enable 18 version nodejs***** \e[0m"
 dnf module disable nodejs -y &>>${log_file}
 dnf module enable nodejs:18 -y &>>${log_file}
@@ -75,7 +77,7 @@ if [ $? -eq 0 ]; then
 
 echo -e "${colour} ******install mysql client & load schema***** \e[0m"
 dnf install mysql -y &>>${log_file}
-mysql -h mysql-dev.praveendevops.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>${log_file}
+mysql -h mysql-dev.praveendevops.online -uroot -p${MYSQL_SET_PASSWORD} < /app/schema/backend.sql &>>${log_file}
 if [ $? -eq 0 ]; then
   echo -e "\e[32m success \e[0m"
   else

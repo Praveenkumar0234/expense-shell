@@ -1,6 +1,8 @@
 log_file="/tmp/expense.log"
 colour="\e[32m"
 
+MYSQL_SET_PASSWORD =$*
+
 echo -e "${colour} *****disable mysql 8 version***** \e[0m"
 dnf module disable mysql -y &>>${log_file}
 if [ $? -eq 0 ]; then
@@ -36,7 +38,7 @@ if [ $? -eq 0 ]; then
    fi
 
 echo -e "${colour} *****Setup the password***** \e[0m"
-mysql_secure_installation --set-root-pass ExpenseApp@1 &>>${log_file}
+mysql_secure_installation --set-root-pass ${MYSQL_SET_PASSWORD} &>>${log_file}
 if [ $? -eq 0 ]; then
   echo -e "\e[32m success \e[0m"
   else
