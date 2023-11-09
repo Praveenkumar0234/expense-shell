@@ -43,7 +43,7 @@ if [ $? -eq 0 ]; then
    fi
 
 echo -e "${colour} ******delete all the application content***** \e[0m"
-rm -rf /app* &>>${log_file}
+rm -rf /app/* &>>${log_file}
 if [ $? -eq 0 ]; then
   echo -e "\e[32m success \e[0m"
   else
