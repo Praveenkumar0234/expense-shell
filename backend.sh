@@ -37,12 +37,14 @@ if [ $? -eq 0 ]; then
    fi
 fi
 
-echo -e "${colour} ******Create app directory ***** \e[0m"
-mkdir /app &>>${log_file}
-if [ $? -eq 0 ]; then
-  echo -e "\e[32m success \e[0m"
-  else
-    echo -e "\e[31m failure \e[0m"
+if [ -d ! /app ]; then
+  echo -e "${colour} ******Create app directory ***** \e[0m"
+  mkdir /app &>>${log_file}
+  if [ $? -eq 0 ]; then
+    echo -e "\e[32m success \e[0m"
+    else
+      echo -e "\e[31m failure \e[0m"
+     fi
    fi
 
 echo -e "${colour} ******delete all the application content***** \e[0m"
