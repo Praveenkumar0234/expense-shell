@@ -5,9 +5,9 @@ echo -e "${colour} ******disable old version nodejs and enable 18 version nodejs
 dnf module disable nodejs -y &>>${log_file}
 dnf module enable nodejs:18 -y &>>${log_file}
 if [ $? -eq 0 ]; then
-  echo passed
+  echo -e "\e[32m success \e[0m"
 else
-  echo failed
+  echo "\e[31m failure \e[0m"
 fi
 
 echo -e "${colour} ******install nodejs***** \e[0m"
