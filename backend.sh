@@ -4,7 +4,7 @@ colour="\e[33m"
 echo -e "${colour} ******disable old version nodejs and enable 18 version nodejs***** \e[0m"
 dnf module disable nodejs -y &>>${log_file}
 dnf module enable nodejs:18 -y &>>${log_file}
-if [ $? -et 0 ]; then
+if [ $? -eq 0 ]; then
   echo passed
 else
   echo failed
