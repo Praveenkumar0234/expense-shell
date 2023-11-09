@@ -26,7 +26,7 @@ if [ $? -eq 0 ]; then
     echo -e "\e[31m failure \e[0m"
    fi
 
-id expennse &>>&>>/${log_file}
+id expennse &>>/${log_file}
 if [ $? -ne 0]; then
 echo -e "${colour} ******add application user***** \e[0m"
 useradd expense &>>/${log_file}
