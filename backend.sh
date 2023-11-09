@@ -26,7 +26,7 @@ if [ $? -eq 0 ]; then
     echo -e "\e[31m failure \e[0m"
    fi
 
-id expennse &>>/${log_file}
+id expense &>>/${log_file}
 if [ $? -ne 0 ]; then
 echo -e "${colour} ******add application user***** \e[0m"
 useradd expense &>>/${log_file}
@@ -35,7 +35,7 @@ if [ $? -eq 0 ]; then
   else
     echo -e "\e[31m failure \e[0m"
    fi
-   fi
+fi
 
 echo -e "${colour} ******Create app directory ***** \e[0m"
 mkdir /app &>>${log_file}
