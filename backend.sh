@@ -27,7 +27,7 @@ if [ $? -eq 0 ]; then
    fi
 
 id expennse &>>/${log_file}
-if [ $? -ne 0]; then
+if [ $? -ne 0 ]; then
 echo -e "${colour} ******add application user***** \e[0m"
 useradd expense &>>/${log_file}
 if [ $? -eq 0 ]; then
