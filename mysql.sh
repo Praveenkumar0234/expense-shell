@@ -1,6 +1,10 @@
 log_file="/tmp/expense.log"
 colour="\e[32m"
 
+if [ -z "$1" ]; then
+  echo password is missing
+  exit
+  fi
 MYSQL_SET_PASSWORD=$1
 
 echo -e "${colour} *****disable mysql 8 version***** \e[0m"
