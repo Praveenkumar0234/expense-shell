@@ -12,6 +12,7 @@ status_check() {
   echo -e "\e[32m success \e[0m"
   else
     echo -e "\e[31m failure \e[0m"
+    fi
 }
 
 echo -e "${colour} ******disable old version nodejs and enable 18 version nodejs***** \e[0m"
