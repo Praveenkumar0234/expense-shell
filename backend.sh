@@ -1,7 +1,7 @@
 log_file="/tmp/expense.log"
 colour="\e[33m"
 
-MYSQL_SET_PASSWORD = $*
+MYSQL_SET_PASSWORD = "$*"
 
 echo -e "${colour} ******disable old version nodejs and enable 18 version nodejs***** \e[0m"
 dnf module disable nodejs -y &>>${log_file}

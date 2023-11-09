@@ -1,7 +1,7 @@
 log_file="/tmp/expense.log"
 colour="\e[32m"
 
-MYSQL_SET_PASSWORD =$*
+MYSQL_SET_PASSWORD = "$*"
 
 echo -e "${colour} *****disable mysql 8 version***** \e[0m"
 dnf module disable mysql -y &>>${log_file}
